@@ -32,5 +32,5 @@ class piece(object):
         if self.haveBomb:
             return False
         else:
-            self.isCleared = False
+            self.isCleared = True
             return True
