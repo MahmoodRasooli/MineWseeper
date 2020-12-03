@@ -12,11 +12,12 @@ class boardForm:
         window = Tk()
         window.title("Mine Sweeper")
         window.geometry('1000x900')
-        window.configure(background = "white")
+        window.configure(background = "white", padx = 50, pady = 50)
         
         for i in range(boardSize):
             for j in range(boardSize):
-                btn = ttk.Button(window, text=f"{i} - {j}").grid(row = i, column = j)
+                btn = ttk.Button(window, text="").grid(row = i + 5, column = j + 5, padx = 2, pady = 2, ipadx=7, ipady=30)
+
 
         window.mainloop()
 
