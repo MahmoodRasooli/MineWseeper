@@ -20,7 +20,8 @@ class boardForm:
 
         for i in range(boardSize):
             for j in range(boardSize):
-                btn = ttk.Button(self.window, text=f"{i} - {j}")#.grid(row=i, column=j, padx=2, pady=2, ipadx=7, ipady=30)
+                text = "Bomb" if self.board.pieces[i][j].haveBomb else str(self.board.pieces[i][j].neiboursBombCount)
+                btn = ttk.Button(self.window, text=text)#.grid(row=i, column=j, padx=2, pady=2, ipadx=7, ipady=30)
                 btn.grid(row=i, column=j, padx=2, pady=2, ipadx=7, ipady=30)
                 btn.bind('<Button-1>', self.left_click)
                 btn.bind('<Button-2>', self.right_click)

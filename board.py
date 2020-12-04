@@ -68,11 +68,32 @@ class board:
         #         self.pieces[i][j].
         pass
 
+    def _getNeighbours(self, i_index: int, j_index: int) -> list:
+        """
+        Returns the neighbours of the given piece
+        """
+        neighbours = []
+        for i in range(-1, 2, 1):
+            for j in range(-1, 2, 1):
+                if(i == 0 and j == 0):
+                    continue
+
+                if(i_index + i < 0 or i_index + i >= self.size or
+                    j_index + j < 0 or j_index + j >= self.size):
+                    continue
+
+                neighbours.append(self.pieces[i][j])
+
+        return neighbours
+
     def clearPiece(self, i_index: int, j_index: int) -> bool:
         """
         Clears the piece, meaning the player left-clicked on the piece
         """
-        return self.pieces[i_index][j_index].clear()
+        if(not(self.pieces[i_index][j_index].clear())):
+            return False
+
+    
 
     def changeFlagState(self, i_index: int, j_index: int, flagState: bool) -> None:
         """
