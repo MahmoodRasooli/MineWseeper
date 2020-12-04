@@ -11,7 +11,7 @@ class board:
         if size <= 2:
             raise Exception("size in not valid")
 
-        self.size = size        
+        self.size = size
 
         if pieces is not None:
             self.pieces = pieces
