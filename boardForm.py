@@ -20,14 +20,14 @@ class boardForm:
 
         for i_index in range(boardSize):
             for j_index in range(boardSize):
-                icon = PhotoImage(file = "flag.png")
+                icon = PhotoImage(Image.open("flag.png"))
                 btn = ttk.Button(self.window, image=icon)#.grid(row=i, column=j, padx=2, pady=2, ipadx=7, ipady=30)
                 btn.grid(row=i_index, column=j_index, padx=2, pady=2, ipadx=7, ipady=30)
                 # btn.configure(image = icon)
                 btn.bind('<Button-1>', self.left_click)
                 btn.bind('<Button-3>', self.right_click)
                 # btn.pack()
-                
+
         self.window.pack_propagate()
         self.window.mainloop()
 
